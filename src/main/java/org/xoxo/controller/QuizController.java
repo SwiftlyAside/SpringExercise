@@ -40,31 +40,6 @@ public class QuizController {
         return pathName.equals("home") ? "homeSample" : map.get(pathName) + pathName;
     }
 
-    @RequestMapping(value = "login")
-    public String login() {
-        return "member/login";
-    }
-
-    @RequestMapping(value = "myPage")
-    public String myPage() {
-        return "member/myPage";
-    }
-
-    @RequestMapping(value = "email")
-    public String email() {
-        return "member/email";
-    }
-
-    @RequestMapping(value = "intro")
-    public String intro() {
-        return "seoul/intro";
-    }
-
-    @RequestMapping(value = "join")
-    public String join() {
-        return "seoul/join";
-    }
-
     @RequestMapping(value = "loginForm")
     public String loginForm(@RequestParam Map<String, String> param, Model model) {
         model.addAttribute("userId", param.get("userId"));

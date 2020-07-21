@@ -70,10 +70,12 @@ h1 img {
 		<div class="gnb-wrap">
 			<nav id="gnb">
 				<ul>
-					<c:url var="">
-						<c:
+					<c:url var="loginURL" value="login">
+						<c:param name="CategoriID">1</c:param>
+						<c:param name="CategoriName">login</c:param>
+						<c:param name="Description">로그인 페이지</c:param>
 					</c:url>
-					<li><a title="" href="login">로그인</a></li>
+					<li><a title="" href="${loginURL}">로그인</a></li>
 					<li><a title="" href="myPage">마이서울</a></li>
 					<li><a title="" href="email">전자우편</a></li>
 					<li><a href="intro">서울소개</a></li>
