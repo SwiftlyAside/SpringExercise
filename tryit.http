@@ -1,0 +1,11 @@
+###
+GET http://localhost:8080/
+
+### home
+GET http://localhost:8080/home
+
+###
+GET http://localhost:8080/login
+
+###
+GET http://localhost:8080/loginForm?userId=swiftly&userPass=askldj09fu0iof
