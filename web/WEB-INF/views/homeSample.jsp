@@ -70,6 +70,9 @@ h1 img {
 		<div class="gnb-wrap">
 			<nav id="gnb">
 				<ul>
+					<c:url var="">
+						<c:
+					</c:url>
 					<li><a title="" href="login">로그인</a></li>
 					<li><a title="" href="myPage">마이서울</a></li>
 					<li><a title="" href="email">전자우편</a></li>
