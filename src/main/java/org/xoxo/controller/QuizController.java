@@ -14,15 +14,40 @@ import java.util.Map;
 public class QuizController {
     private static final Logger logger = LoggerFactory.getLogger(QuizController.class);
 
-    @RequestMapping(value = "home")
+    @RequestMapping(value = "homeSample")
     public String home() {
         logger.info(new Date().toString());
         return "home";
     }
 
+    @RequestMapping(value = "home")
+    public String homeSample() {
+        return "homeSample";
+    }
+
     @RequestMapping(value = "login")
     public String login() {
-        return "login";
+        return "member/login";
+    }
+
+    @RequestMapping(value = "myPage")
+    public String myPage() {
+        return "member/myPage";
+    }
+
+    @RequestMapping(value = "email")
+    public String email() {
+        return "member/email";
+    }
+
+    @RequestMapping(value = "intro")
+    public String intro() {
+        return "seoul/intro";
+    }
+
+    @RequestMapping(value = "join")
+    public String join() {
+        return "seoul/join";
     }
 
     @RequestMapping(value = "loginForm")
