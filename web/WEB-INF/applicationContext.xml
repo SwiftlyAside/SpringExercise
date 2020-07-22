@@ -12,7 +12,8 @@
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean"
           p:dataSource-ref="dataSource"
           p:mapperLocations="/WEB-INF/mapper/*.xml"/>
-    <bean class="org.mybatis.spring.SqlSessionTemplate"
-          id="sqlSessionTemplate"
-          c:sqlSessionFactory-ref="sqlSessionFactoryBean"/>
+    <bean class="org.mybatis.spring.mapper.MapperFactoryBean"
+          id="mapperFactoryBean"
+          p:mapperInterface="org.xoxo.IDAO.IDao"
+          p:sqlSessionFactory-ref="sqlSessionFactoryBean"/>
 </beans>
