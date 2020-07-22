@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="list" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <value>산악자전거</value>
+                <value>서-핑</value>
+                <value>번지점프</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="member" class="org.xoxo.POJO.Member">
+        <constructor-arg name="name" value="홍길동"/>
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="height" value="183.2"/>
+        <constructor-arg name="hobbies" ref="list"/>
+    </bean>
+</beans>
