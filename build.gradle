@@ -16,4 +16,9 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.7.0'
+    compile group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '19.7.0.0'
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.5'
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.5'
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.7.RELEASE'
 }
