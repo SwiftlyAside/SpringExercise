@@ -11,16 +11,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.xoxo.DTO.Person;
 import org.xoxo.Service.IService;
 
+import java.util.List;
+
 @Controller
 public class HomeController {
     private static final Logger logger = LoggerFactory.getLogger(QuizController.class);
+    private final IService iService;
 
     @Autowired
-    private IService iService;
+    public HomeController(IService iService) {
+        this.iService = iService;
+    }
 
     @RequestMapping(value = "insert")
     public String insert() {
         return "insert";
+    }
+
+    @RequestMapping(value = "selectAll")
+    public String selectAll(Model model) {
+        List<Person> personList = iService.selectAll();
+        model.addAttribute("personList", personList);
+        return "select";
+    }
+
+    @RequestMapping(value = "selectPart")
+    public String selectPart(@RequestParam("id") String id, Model model) {
+        Person person = iService.selectPart(id);
+        model.addAttribute("person", person);
+        return "select";
     }
 
     @RequestMapping(value = "insertProc")

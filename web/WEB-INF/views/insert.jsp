@@ -22,5 +22,6 @@
         </tr>
     </table>
 </form>
+<a href="select">select</a>
 </body>
 </html>

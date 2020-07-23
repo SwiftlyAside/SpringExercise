@@ -6,4 +6,13 @@
         INSERT INTO PERSON (FIRSTNAME, LASTNAME)
         VALUES (#{firstName, jdbcType=VARCHAR}, #{lastName, jdbcType=VARCHAR})
     </insert>
+    <select id="selectAll" resultType="org.xoxo.DTO.Person">
+        SELECT *
+        FROM PERSON
+    </select>
+    <select id="selectPart" resultType="org.xoxo.DTO.Person" parameterType="String">
+        SELECT *
+        FROM PERSON
+        WHERE ID = #{id}
+    </select>
 </mapper>

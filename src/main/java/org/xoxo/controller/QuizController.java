@@ -14,7 +14,8 @@ import java.util.Map;
 
 @Controller
 public class QuizController {
-    private Map<String, String> map;
+    private static final Logger logger = LoggerFactory.getLogger(QuizController.class);
+    private final Map<String, String> map;
 
     public QuizController() {
         map = new HashMap<>();
@@ -27,8 +28,6 @@ public class QuizController {
         map.put("join", "seoul/");
     }
 
-    private static final Logger logger = LoggerFactory.getLogger(QuizController.class);
-
     @RequestMapping(value = "homeSample")
     public String home() {
         logger.info(new Date().toString());
@@ -37,7 +36,8 @@ public class QuizController {
 
     @RequestMapping(value = "{pathName}")
     public String homeSample(@PathVariable String pathName) {
-        return pathName.equals("home") ? "homeSample" : map.get(pathName) + pathName;
+        return pathName.equals("home") ? "homeSample" :
+                (map.get(pathName) != null ? map.get(pathName) + "/" : "") + pathName;
     }
 
     @RequestMapping(value = "loginForm")
