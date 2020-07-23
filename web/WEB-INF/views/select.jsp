@@ -9,6 +9,12 @@
 <html>
 <head>
     <title>Select</title>
+    <script>
+      function proc(cmd) {
+        document.getElementById('form').action = cmd;
+        document.getElementById('form').submit();
+      }
+    </script>
 </head>
 <body>
 <h1><a href="selectAll">Welcome to select.</a></h1>
@@ -20,11 +26,12 @@
     ${person.id} ${person.firstName} ${person.lastName}<br>
 </h2>
 <c:if test="${!(empty person)}">
-    <form action="modify" method="post">
+    <form id="form" method="post">
         <input type="hidden" name="id" value="${person.id}">
         <input type="hidden" name="firstName" value="${person.firstName}">
         <input type="hidden" name="lastName" value="${person.lastName}">
-        <input type="submit" value="수정">
+        <input type="button" onclick="proc('modify')" value="수정">
+        <input type="button" onclick="proc('deleteProc')" value="삭제">
     </form>
 </c:if>
 </body>

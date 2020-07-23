@@ -15,4 +15,6 @@ public interface IDao {
     Person selectPart(String id);
 
     void modifyProc(Map<String, String> map);
+
+    void deleteProc(String id);
 }

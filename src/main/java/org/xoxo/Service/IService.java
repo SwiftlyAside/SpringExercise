@@ -12,4 +12,6 @@ public interface IService {
     Person selectPart(String id);
 
     void modifyProc(Person person);
+
+    void deleteProc(String id);
 }

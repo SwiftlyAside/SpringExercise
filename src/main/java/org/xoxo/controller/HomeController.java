@@ -61,6 +61,12 @@ public class HomeController {
         return "redirect:selectAll";
     }
 
+    @RequestMapping(value = "deleteProc")
+    public String deleteProc(@RequestParam("id") String id) {
+        iService.deleteProc(id);
+        return "redirect:selectAll";
+    }
+
     @RequestMapping(value = "third", method = RequestMethod.GET)
     public String home() {
         return "third/home";

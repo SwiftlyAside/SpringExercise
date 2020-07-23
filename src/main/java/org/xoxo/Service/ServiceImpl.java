@@ -42,4 +42,9 @@ public class ServiceImpl implements IService {
         personDao.modifyProc(map);
     }
 
+    @Override
+    public void deleteProc(String id) {
+        personDao.deleteProc(id);
+    }
+
 }
