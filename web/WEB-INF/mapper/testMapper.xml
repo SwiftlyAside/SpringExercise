@@ -15,4 +15,10 @@
         FROM PERSON
         WHERE ID = #{id}
     </select>
+    <update id="modifyProc" parameterType="map">
+        UPDATE PERSON
+        SET FIRSTNAME = #{fn},
+            LASTNAME  = #{ln}
+        WHERE ID = #{id}
+    </update>
 </mapper>

@@ -49,6 +49,18 @@ public class HomeController {
         return "insert";
     }
 
+    @RequestMapping(value = "modify")
+    public String modify(Person person, Model model) {
+        model.addAttribute("person", person);
+        return "modify";
+    }
+
+    @RequestMapping(value = "modifyProc")
+    public String modifyProc(Person person) {
+        iService.modifyProc(person);
+        return "redirect:selectAll";
+    }
+
     @RequestMapping(value = "third", method = RequestMethod.GET)
     public String home() {
         return "third/home";

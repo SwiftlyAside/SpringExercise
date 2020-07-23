@@ -1,10 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   User: iveci
   Date: 2020-07-21
   Time: 10:31
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page session="false" %>
 <html>
 <head>
     <title>Select</title>
@@ -18,5 +19,13 @@
 <h2>
     ${person.id} ${person.firstName} ${person.lastName}<br>
 </h2>
+<c:if test="${!(empty person)}">
+    <form action="modify" method="post">
+        <input type="hidden" name="id" value="${person.id}">
+        <input type="hidden" name="firstName" value="${person.firstName}">
+        <input type="hidden" name="lastName" value="${person.lastName}">
+        <input type="submit" value="수정">
+    </form>
+</c:if>
 </body>
 </html>

@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 import org.xoxo.DTO.Person;
 import org.xoxo.IDAO.IDao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ServiceImpl implements IService {
@@ -29,6 +31,15 @@ public class ServiceImpl implements IService {
     @Override
     public Person selectPart(String id) {
         return personDao.selectPart(id);
+    }
+
+    @Override
+    public void modifyProc(Person person) {
+        Map<String, String> map = new HashMap<>();
+        map.put("id", String.valueOf(person.getId()));
+        map.put("fn", person.getFirstName());
+        map.put("ln", person.getLastName());
+        personDao.modifyProc(map);
     }
 
 }
